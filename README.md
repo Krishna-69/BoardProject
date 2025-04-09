@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## :toolbox: Getting Started
 
-## Getting Started
+1. Make sure **Git** and **NodeJS** is installed.
+2. Clone this repository to your local computer.
+3. Create `.env.local` file in **root** directory.
+4. Contents of `.env.local`:
 
-First, run the development server:
+```env
+# .env.local
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# disable next.js telemetry
+NEXT_TELEMETRY_DISABLED=1
+
+# deployment for convex
+CONVEX_DEPLOYMENT=dev:convex-app-name # team: <your-team-name>, project: <your-project-name>
+
+# convex deployment url
+NEXT_PUBLIC_CONVEX_URL=https://convex-app-name.convex.cloud
+
+# clerk auth keys
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+CLERK_SECRET_KEY=sk_test_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+# liveblocks api keys
+NEXT_PUBLIC_LIVEBLOCKS_PUBLIC_KEY=pk_dev_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+NEXT_PUBLIC_LIVEBLOCKS_SECRET_KEY=sk_dev_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 5. Convex Deployment Configuration:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### a. Visit the Convex Website:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Go to the [Convex website](https://convex.cloud/) and sign in to your account.
 
-## Learn More
+#### b. Access Deployment Settings:
 
-To learn more about Next.js, take a look at the following resources:
+- Navigate to the deployment settings section in your Convex account.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### c. Retrieve Deployment Configuration:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Find the deployment details, including team and project names.
+- Update the `CONVEX_DEPLOYMENT` variable in the `.env.local` file with the obtained information.
 
-## Deploy on Vercel
+### 6. Clerk Authentication Keys:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### a. Visit the Clerk Website:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Go to the [Clerk website](https://clerk.dev/) and sign in to your Clerk account.
+
+#### b. Access API Keys:
+
+- Find the section in your Clerk account related to API keys or authentication settings.
+
+#### c. Generate Keys:
+
+- Generate a pair of keys (Publishable Key and Secret Key).
+
+#### d. Update `.env.local`:
+
+- Replace the `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` and `CLERK_SECRET_KEY` variables in the `.env.local` file with the keys obtained from Clerk.
+
+### 7. Liveblocks API Keys:
+
+#### a. Visit the Liveblocks Website:
+
+- Go to the [Liveblocks website](https://liveblocks.io/) and sign in to your Liveblocks account.
+
+#### b. Access API Keys:
+
+- Navigate to your Liveblocks account settings or API keys section.
+
+#### c. Generate Keys:
+
+- Generate a pair of keys (Public Key and Secret Key) for development.
+
+#### d. Update `.env.local`:
+
+- Replace the `NEXT_PUBLIC_LIVEBLOCKS_PUBLIC_KEY` and `NEXT_PUBLIC_LIVEBLOCKS_SECRET_KEY` variables in the `.env.local` file with the Liveblocks API keys obtained.
+
+### 8. Save and Secure:
+
+- Save the changes to the `.env.local` file.
+
+9. Install Project Dependencies using `npm install --legacy-peer-deps` or `yarn install --legacy-peer-deps`.
+10. Now app is fully configured 👍 and you can start using this app using either one of `npm run dev` or `yarn dev`.
+
+**NOTE:** Please make sure to keep your API keys and configuration values secure and do not expose them publicly.
+
