@@ -8,9 +8,6 @@
 ```env
 # .env.local
 
-# disable next.js telemetry
-NEXT_TELEMETRY_DISABLED=1
-
 # deployment for convex
 CONVEX_DEPLOYMENT=dev:convex-app-name # team: <your-team-name>, project: <your-project-name>
 
