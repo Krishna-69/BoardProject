@@ -4,13 +4,11 @@ import { Canvas } from "./_components/canvas";
 import { Room } from "@/components/room";
 import { Loading } from "./_components/loading";
 
-interface BoardIdPageProps {
-  params: {
-    boardId: string;
-  };
-}
-
-export default async function BoardIdPage({ params }: BoardIdPageProps) {
+export default async function BoardIdPage({
+  params,
+}: {
+  params: { boardId: string };
+}) {
   return (
     <Room roomId={params.boardId} fallback={<Loading />}>
       <Canvas boardId={params.boardId} />
